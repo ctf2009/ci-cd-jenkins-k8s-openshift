@@ -1,6 +1,9 @@
-# spring-boot-kubernetes-example
-An example of using Spring Boot with K8s
+# CI/CD, Jenkins, Kubernetes and Openshift
+This repo contains examples related to the following
 
-- Config Map application.yaml
-- Secrets
-- Various Template examples
+- Deploying to Kubernetes directly, using config-maps, secrets etc
+- Using Openshift with Jenkins and Jenkinsfile
+
+It also contains commands used to test the examples
+
+This repo is mainly for testing new Jenkinsfile changes and overal behavour of deployments etc
