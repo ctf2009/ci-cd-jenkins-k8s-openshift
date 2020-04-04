@@ -6,4 +6,4 @@ This repo contains examples related to the following
 
 It also contains commands used to test the examples
 
-This repo is mainly for testing new Jenkinsfile changes and overal behavour of deployments etc
+This repo is mainly for testing new Jenkinsfile changes and overall behaviour of deployments etc
