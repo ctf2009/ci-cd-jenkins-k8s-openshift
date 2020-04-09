@@ -53,7 +53,7 @@ Please see the Repo's main README for more information about requirements
 Before proceeding, please ensure that Docker is running in your environment.
 Run the following from the Sample App root to create a new image:
 
-`../gradlew -p ../ :sample:jibDockerBuild --image=ctf/sample-app`
+`../gradlew -p ../ :sample:jibDockerBuild`
 
 ### Output
 
