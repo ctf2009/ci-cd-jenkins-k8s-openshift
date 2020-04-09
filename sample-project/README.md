@@ -23,7 +23,7 @@ From the root of the entire repository you can run `./gradlew :sample:clean :sam
 
 ### Output
 
-Once build, the Spring Boot Jar will be located in `build/libs/sample-project.<X.Y.Z>.jar` 
+Once built, the Spring Boot Jar will be located in `build/libs/sample-project.<X.Y.Z>.jar` 
 
 ### Running
 

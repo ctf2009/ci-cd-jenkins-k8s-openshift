@@ -9,7 +9,11 @@ It also contains commands used to test the examples
 This repo is mainly for testing new Jenkinsfile changes and overall behaviour of deployments and for POC's and demonstrations
 
 #### Current Status:
-- Sample Application Built
+- Sample Application built
+- README for Sample Application completed
+- Introduced Jib tool to build Docker Images
 
 #### Next Step
-- Generate README in Sample Application to show how we can override Spring Properties
+- Demonstrate Overriding Properties
+- Deploy Container into Kuberenetes
+- Build README on Kubernetes
