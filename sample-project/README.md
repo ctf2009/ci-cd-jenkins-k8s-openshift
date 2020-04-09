@@ -39,7 +39,7 @@ If you wish to try out the `alternative` profile, you can do this by running
 
 `java -jar -Dspring.profiles.active=alternative ./build/libs/sample-project.<X.Y.Z>.jar`
 
-## Building / Running Containerised
+# Building / Running Containerised
 
 This section shows how to build the Sample Project and produce a Docker image ready to run
 
