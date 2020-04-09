@@ -1,0 +1,3 @@
+rootProject.name = 'ci-cd-jenkins-k8s-openshift'
+include 'sample-project'
+
