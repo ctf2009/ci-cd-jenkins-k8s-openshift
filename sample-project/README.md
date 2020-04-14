@@ -75,9 +75,11 @@ You can test the application is working by navigating to:
 
 `http://localhost:9000/greeting`
 
-If you wish to try out the `alternative` profile, you can do this by running
+If you wish to try out the `alternative` profile, you can do this by running:
 
 `docker run -p 9000:9000 -e "SPRING_PROFILES_ACTIVE=alternative" ctf/sample-app`
 
+You can provide your own greeting by running the following:
 
+`docker run -p 9000:9000 -e "GREETING=My Custom Greeting" ctf/sample-app`
 
