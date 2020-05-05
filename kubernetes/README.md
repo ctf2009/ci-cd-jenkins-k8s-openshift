@@ -245,11 +245,82 @@ replicaset.apps/sample-app-deployment-5f94945777   3         3         3       3
 
 When finished, remove the deployment by running `kubectl delete deployment sample-app-deployment`
 
-## Example 10
+## Example 10 - Namespaces
 
+Namespaces allow you to divide up cluster resources between multiple users or concerns. Up till now we have been using the default namespace. This example shows you how you can create your own.
 
-## Example 11
+You can create namespaces in a couple of different ways
 
+- Use a definition file. e.g `kubectl create -f example-10/namespace-definition.yaml`
+- Run the command `kubectl create namespace my-namespace`
+
+To view the namespaces, run `kubectl get namespaces`
+
+You can test the use of namespaces by running `kubectl create -f example-10/namespace-deployment-config.yaml`
+
+**Note:** The above command assumes you have created the namespace `my-namespace` via one of the two options previously outlined.
+
+Once deployed you will be able to check the deployment is in the `my-namespace` namespace by running `kubectl get all -n my-namespace` 
+
+```
+kubectl get all -n my-namespace
+NAME                                         READY   STATUS    RESTARTS   AGE
+pod/sample-app-deployment-5f94945777-9mqkg   1/1     Running   0          24s
+pod/sample-app-deployment-5f94945777-t52b7   1/1     Running   0          24s
+pod/sample-app-deployment-5f94945777-t67bt   1/1     Running   0          24s
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/sample-app-deployment   3/3     3            3           24s
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/sample-app-deployment-5f94945777   3         3         3       24s
+```
+
+When finished run `kubectl delete namespace my-namespace` to remove everything created in this example.
+
+To set a namespace preference, run the following: `kubectl config set-context --current --namespace=<NAMESPACE_NAME>`
+
+To verify this change, run the following: `kubectl config view --minify | grep namespace:`
+
+## Example 11 - Quotas
+
+This example shows how we can apply resource quotas to namespaces 
+
+First create a namespace by running the following command `kubectl create namespace my-namespace`
+
+Next, create the Resource Quota by running the following: `kubectl create -f example-11/resource-quota.yaml`
+
+You can view the Quote by running `kubectl describe quota compute-quota -n my-namespace`
+
+Next, we will will create some pods as follows:
+
+We can create the first pod as follows with no issues:
+
+`kubectl run pod1 --image=nginx --namespace my-namespace --restart='Never' --limits='cpu=400m,memory=800Mi' --requests='cpu=200m,memory=600Mi'`
+
+When we try to create the second pod, we get an error for exceeding the memory constraints
+
+```
+kubectl run pod2 --image=nginx --namespace my-namespace --restart='Never' --limits='cpu=400m,memory=800Mi' --requests='cpu=200m,memory=600Mi'
+
+Error from server (Forbidden): pods "pod2" is forbidden: exceeded quota: compute-quota, requested: requests.memory=600Mi, used: requests.memory=600Mi, limited: requests.memory=1Gi
+```
+If we reduce the memory required for the second pod, we can successfully deploy it:
+
+```
+kubectl run pod2 --image=nginx --namespace my-namespace --restart='Never' --limits='cpu=400m,memory=200Mi' --requests='cpu=200m,memory=100Mi'
+pod/pod2 created
+```
+
+If we try to deploy a third pod, we will get an error because we already have 2 pods in the namespace and the quota will not allow any more
+
+```
+kubectl run pod3 --image=nginx --namespace my-namespace --restart='Never' --limits='cpu=500m,memory=500Mi' --requests='cpu=250m,memory=150Mi'
+
+Error from server (Forbidden): pods "pod3" is forbidden: exceeded quota: compute-quota, requested: pods=1, used: pods=2, limited: pods=2
+```
+
+You can remove everything created in this example by running `kubectl delete namespace my-namespace`
 
 ## Example 12
 

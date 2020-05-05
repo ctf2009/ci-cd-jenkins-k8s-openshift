@@ -14,11 +14,10 @@ This repo is mainly for testing new Jenkinsfile changes and overall behaviour of
 - Sample Application built
 - README for Sample Application completed
 - Introduced Jib tool to build Docker Images
+- Kubernetes Examples in Progress
 
 #### Next Step
-- Demonstrate Overriding Properties
-- Deploy Container into Kuberenetes
-- Build README on Kubernetes
+- Continue Kubernetes Examples
 
 ## Requirements
 In order to run the examples there are a number of requirements and recommendations

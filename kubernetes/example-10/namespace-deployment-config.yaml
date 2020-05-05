@@ -1,11 +1,15 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: sample-app-rc # Name of ReplicationController
+  name: sample-app-deployment # Name of Deployment
+  namespace: my-namespace
   labels:
     app: sample-app
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app # Pods to which the ReplicaSet should match on
   template:
     metadata:
       name: sample-app-pod
