@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: sample-app-rc # Name of ReplicationController
+  labels:
+    app: sample-app
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: sample-app-pod # Name of the Pod (Prefix)
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: sample # Name of the Container inside the Pod
+          image: ctf/sample-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9000
