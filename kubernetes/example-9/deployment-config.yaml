@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deployment # Name of Deployment
+  labels:
+    app: sample-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app # Pods to which the ReplicaSet should match on
+  template:
+    metadata:
+      name: sample-app-pod
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: sample # Name of the Container inside the Pod
+          image: ctf/sample-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9000

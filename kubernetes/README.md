@@ -130,13 +130,13 @@ NAME             READY   STATUS              RESTARTS   AGE
 sample-app-pod   0/1     ErrImageNeverPull   0          4s
 ```
 
-The error is because we are trying to use an image that does not exist. We can fix this in one of two ways
+The error is because we are trying to use an image that does not exist. We can fix this in one of two ways.
 
 - Edit the pod definition yaml file and change the image to be `ctf/sample-app:latest` and then run `kubectl apply -f example-5/wrong-image-pod-definition.yaml`
 
-- Use `kubectl edit pod sample-app-pod` which will throw up an editor where we can change the image to `ctf/sample-app:latest` before saving and exiting
+- Use `kubectl edit pod sample-app-pod` which will throw up an editor where we can change the image to `ctf/sample-app:latest` before saving and exiting.
 
-Once we have performed one of the above actions, the pod will successfully run
+Once we have performed one of the above actions, the pod will successfully run.
 
 When finished, remove the pod by running: `kubectl delete pod sample-app-pod`
 
@@ -166,7 +166,7 @@ sample-app-rc-p592g   1/1     Running   0          81s
 sample-app-rc-pvrsf   1/1     Running   0          81s
 ```
 
-If you delete one of the pods, you will find that the ReplicationController will fire up another one to replace it. In the example below, when we delete pod `sample-app-rc-pvrsf`, a new pod named `sample-app-rc-lszgm` is created in its place
+If you delete one of the pods, you will find that the ReplicationController will fire up another one to replace it. In the example below, when we delete pod `sample-app-rc-pvrsf`, a new pod named `sample-app-rc-lszgm` is created in its place.
 
 ```
 kubectl get pods
@@ -202,24 +202,48 @@ NAME            DESIRED   CURRENT   READY   AGE
 sample-app-rs   3         3         3       9s
 ```
 
-You can follow similar steps as in Example 6 to delete a pod and see another one get created in its place by the ReplicaSet
+You can follow similar steps as in Example 6 to delete a pod and see another one get created in its place by the ReplicaSet.
 
 When finished, remove the ReplicaSet by running `kubectl delete rs sample-app-rs`
 
 ## Example 8 - Basic Scaling of Replica Sets
 
-There are a number of ways to scale the number of pods in a Replica Set
+There are a number of ways to scale the number of pods in a Replica Set.
+We will reuse the Replica Set defintion in example 7 fot this example.
 
-- Update the `example-6/rs-definition.yaml` file and change the number of replicas. When done, use `kubectl replace -f example-6/rs-definition.yaml`
+- Update the `example-7/rs-definition.yaml` file and change the number of replicas. When done, use `kubectl replace -f example-7/rs-definition.yaml`
 - Use `kubectl scale --replicas=<No Replicas> -f example-6/rs-definition.yaml`
 - Use `kubectl scale --replicas=<No Replicas> replicaset sample-app-rs`
 
-Once you have tried one of the above, use the `kubectl get rs` to check that the number of pods have changed. Note that in the last ways to scale, the file is NOT updated
+Once you have tried one of the above, use the `kubectl get rs` to check that the number of pods have changed. Note that in the last ways to scale, the file is NOT updated.
 
 When finished, remove the ReplicaSet by running `kubectl delete rs sample-app-rs`
 
-## Example 9
+## Example 9 - Basic Deployments
 
+Deployments take things a step further. They provide additional features such as the ability to perform rolling updates and rollbacks. Deployments use Replica Sets in order to manage rolling updates and can scale old pods down as new pods scale up.
+
+Create the ReplicaSet using the file located in `example-9/deployment-config.yaml`
+
+`kubectl create -f example-9/deployment-config.yaml`
+
+Once deployed, you can run `kubectl get all -l app=sample-app` to view everything the Deployment created.
+
+```
+kubectl get all -l app=sample-app
+NAME                                         READY   STATUS    RESTARTS   AGE
+pod/sample-app-deployment-5f94945777-56pjf   1/1     Running   0          3m31s
+pod/sample-app-deployment-5f94945777-78bmz   1/1     Running   0          3m31s
+pod/sample-app-deployment-5f94945777-bg6rx   1/1     Running   0          3m31s
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/sample-app-deployment   3/3     3            3           3m31s
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/sample-app-deployment-5f94945777   3         3         3       3m31s
+```
+
+When finished, remove the deployment by running `kubectl delete deployment sample-app-deployment`
 
 ## Example 10
 
