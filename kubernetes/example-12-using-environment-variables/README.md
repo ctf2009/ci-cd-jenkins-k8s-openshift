@@ -33,7 +33,7 @@ kubectl logs sample-app-pod-1
 2020-05-08 04:27:05.014  INFO 1 --- [           main] com.ctf.sample.Application               : Started Application in 3.877 seconds (JVM running for 5.366)
 ```
 
-If we port forward to the pod by running `kubectl port-forward sample-app-pod-2 9000` and then access the endpoint `curl localhost:9000/greeting` you will be able to see the alternative greeting:
+If we port forward to the pod by running `kubectl port-forward sample-app-pod-1 9000` and then access the endpoint `curl localhost:9000/greeting` you will be able to see the alternative greeting:
 
 ```
 curl localhost:9000/greeting
@@ -48,7 +48,7 @@ Run `kubectl create -f pod-definition-2.yaml`
 
 If you run `kubectl logs sample-app-pod-2` you will see that the `default` profile is being used. However because we have set the `GREETING` Environment Variable, this will override the value set in the `application.yaml` file in the Sample App
 
-Once the pod is up, run `kubectl port-forward sample-app-pod 8000:9000` to allow port forwarding to the pod. **Note:** This command forwards port 8000 on the local machine as this allows us to port forward both the first pod and the new pod at the same time via different local ports.
+Once the pod is up, run `kubectl port-forward sample-app-pod-2 8000:9000` to allow port forwarding to the pod. **Note:** This command forwards port 8000 on the local machine as this allows us to port forward both the first pod and the new pod at the same time via different local ports.
 
 Accessing the endpoint `curl localhost:8000/greeting` will greet us with the greeting we provided in the pod defintion
 
