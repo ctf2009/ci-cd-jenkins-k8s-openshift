@@ -1,0 +1,5 @@
+server:
+  port: 9000
+
+greeting: "Hello World from config-map-3. The entire configuration is a config-map"
+additional_greeting: "Have a super day!"

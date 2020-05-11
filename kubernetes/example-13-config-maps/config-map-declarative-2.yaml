@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map-declarative-2
+data:
+  application.yaml: |-
+    server:
+      port: 9000
+
+    greeting: "Hello World from config-map-declarative-2. The entire configuration is a config-map"
+    additional_greeting: "Have a super day!"

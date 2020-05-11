@@ -79,7 +79,7 @@ Example 11 shows how we can use Resource Quotas in namespaces and how they work
 ### Example 12 - Environment Variables
 Example 12 shows how we can use Environment Variabes in our deployments
 
-### Example 13
+### Example 13 - Creating Config Maps
 
 ### Some Commands
 kubectl describe pods  
