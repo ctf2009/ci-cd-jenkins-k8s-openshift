@@ -47,39 +47,40 @@ Each example has a `README.md` file with instructions to follow
 [01-example-run-pod](01-example-run-pod/) shows how to run a simple pod / deployment using the `kubectl run` command
 
 ### Example 2 - Run Pod and Port Forward
-Example 2 is a small extension to Example 1 and shows how we can use the `kubectl port-forward` command to port forward to a single pod
+[02-example-run-pod-port-forward](02-example-run-pod-port-forward/) is a small extension to Example 1 and shows how we can use the `kubectl port-forward` command to port forward to a single pod
 
 ### Example 3 - Using Pod Definition YAML 
-Example 3 shows how to write a pod definition file in YAML
+[03-example-pods-with-yaml](03-example-pods-with-yaml/) shows how to write a pod definition file in YAML
 
 ### Example 4 - Using the Dry Run Command
-Example 4 shows how we can use `--dry-run` to test commands and generate YAML definitions
+[04-example-using-dry-run](04-example-using-dry-run/) shows how we can use `--dry-run` to test commands and generate YAML definitions
 
 ### Example 5 - Editing a Pod
-Example 5 shows how we can edit pods in a number of different ways
+[05-example-edit-pod](05-example-edit-pod/) shows how we can edit pods in a number of different ways
 
 ### Example 6 - Replication Controllers
-Example 6 shows how to configure Replication Controllers
+[06-example-replication-controllers](06-example-replication-controllers/) shows how to configure Replication Controllers
 
 ### Example 7 - Replica Sets
-Example 7 shows how to use Replica Sets which are intended to superseed Replication Controllers
+[07-example-replica-sets](07-example-replica-sets/) shows how to use Replica Sets which are intended to superseed Replication Controllers
 
 ### Example 8 - Scaling Replica Sets
-Example 8 shows how we can scale Replica Sets using the `kubectl scale` command
+[08-example-scaling-replica-sets](08-example-scaling-replica-sets/) shows how we can scale Replica Sets using the `kubectl scale` command
 
 ### Example 9 - Basic Deployments
-Example 9 demonstrates deployments and how to configure them
+[09-example-basic-deployments](09-example-basic-deployments/) demonstrates deployments and how to configure them
 
 ### Example 10 - Namespaces
-Example 10 shows how to create and use Namespaces
+[10-example-namespaces](10-example-namespaces/) shows how to create and use Namespaces
 
 ### Example 11 - Quotas
-Example 11 shows how we can use Resource Quotas in namespaces and how they work
+[11-example-namespace-quotas](11-example-namespace-quotas/) shows how we can use Resource Quotas in namespaces and how they work
 
 ### Example 12 - Environment Variables
-Example 12 shows how we can use Environment Variabes in our deployments
+[12-example-using-environment-variables](12-example-using-environment-variables/) shows how we can use Environment Variabes in our deployments
 
 ### Example 13 - Creating Config Maps
+[13-example-config-maps](13-example-config-maps/)
 
 ### Some Commands
 kubectl describe pods  

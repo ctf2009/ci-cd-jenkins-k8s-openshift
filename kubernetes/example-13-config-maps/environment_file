@@ -1,0 +1,2 @@
+GREETING='Hello from config-map-2'
+ADDITIONAL_GREETING='config-map-2 was created from an Environment File`
