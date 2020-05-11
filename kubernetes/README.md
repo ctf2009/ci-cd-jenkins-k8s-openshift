@@ -44,7 +44,7 @@ ctf/sample-app                       latest              30829a15755b        21 
 Each example has a `README.md` file with instructions to follow
 
 ### Example 1 - Run Pod
-Example 1 shows how to run a simple pod / deployment using the `kubectl run` command
+[01-example-run-pod](01-example-run-pod/) shows how to run a simple pod / deployment using the `kubectl run` command
 
 ### Example 2 - Run Pod and Port Forward
 Example 2 is a small extension to Example 1 and shows how we can use the `kubectl port-forward` command to port forward to a single pod
