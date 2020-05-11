@@ -13,6 +13,4 @@ spec:
             name: sample-app-config-map-envs
       imagePullPolicy: Never
       ports:
-        - containerPort: 9000
-
-   
+        - containerPort: 9000   

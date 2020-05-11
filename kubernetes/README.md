@@ -83,7 +83,10 @@ Each example has a `README.md` file with instructions to follow
 [13-example-config-maps](13-example-config-maps/) shows how to create Config Maps in a couple of different ways
 
 ### Example 14 - Using Config Maps
+[14-example-using-config-maps](14-example-using-config-maps/) shows how to create Config Maps in a couple of different ways
 
+### Example 15 - Secrets
+[15-secrets](15-secrets/) shows how to use secrets
 
 ### Some Commands
 kubectl describe pods  

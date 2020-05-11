@@ -14,6 +14,8 @@ spec:
             configMapKeyRef:
               name: sample-app-config-map-envs
               key: GREETING
+        - name: ADDITIONAL_GREETING
+          value: "This additional greeting is not from the config map"      
       imagePullPolicy: Never
       ports:
         - containerPort: 9000
