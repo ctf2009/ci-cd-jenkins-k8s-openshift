@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-config-map-envs
+data:
+  GREETING: 'Hello from sample-app-config-map-envs'
+  ADDITIONAL_GREETING: 'This additional greeting is from the config map'

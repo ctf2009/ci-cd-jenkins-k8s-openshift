@@ -1,0 +1,5 @@
+server:
+  port: 9000
+
+greeting: "Hello! This is an example of setting the application.yaml file in a config map"
+additional_greeting: "This is an additional greeting frm the application.yaml file created from a config map"
