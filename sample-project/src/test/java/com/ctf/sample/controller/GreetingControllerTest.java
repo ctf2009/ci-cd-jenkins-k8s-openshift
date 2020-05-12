@@ -8,13 +8,22 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(GreetingController.class)
+@WebMvcTest(
+        controllers = GreetingController.class,
+        properties = {
+                "greeting=Test Hello World",
+                "comment=This is a comment",
+                "hostname=localhost"
+        })
 public class GreetingControllerTest {
 
     private static final String EXPECTED_GREETING = "Test Hello World";
+
+    private static final String EXPECTED_COMMENT = "This is a comment";
+
+    private static final String EXPECTED_HOSTNAME = "localhost";
 
     @Autowired
     private MockMvc mockMvc;
@@ -25,8 +34,9 @@ public class GreetingControllerTest {
         this.mockMvc.perform(get("/greeting"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(content().string(EXPECTED_GREETING));
-
+                .andExpect(jsonPath("$.greeting").value(EXPECTED_GREETING))
+                .andExpect(jsonPath("$.comment").value(EXPECTED_COMMENT))
+                .andExpect(jsonPath("$.hostname").value(EXPECTED_HOSTNAME));
     }
 
 }

@@ -2,3 +2,5 @@ server:
   port: 9000
 
 greeting: "Hello World"
+comment: "This is the default profile comment"
+hostname: "${HOSTNAME:Unavailable}"
