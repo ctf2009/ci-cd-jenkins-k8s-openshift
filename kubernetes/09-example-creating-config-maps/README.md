@@ -1,4 +1,4 @@
-## Example 13 - Creating Config Maps
+## Example 9 - Creating Config Maps
 
 This example is based around the Kubernetes online documentation located at [https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
 

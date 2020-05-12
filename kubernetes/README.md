@@ -46,47 +46,38 @@ Each example has a `README.md` file with instructions to follow
 ### Example 1 - Run Pod
 [01-example-run-pod](01-example-run-pod/) shows how to run a simple pod / deployment using the `kubectl run` command
 
-### Example 2 - Run Pod and Port Forward
-[02-example-run-pod-port-forward](02-example-run-pod-port-forward/) is a small extension to Example 1 and shows how we can use the `kubectl port-forward` command to port forward to a single pod
+### Example 2 - Editing a Pod
+[02-example-edit-pod](02-example-edit-pod/) shows how we can edit pods in a number of different ways
 
-### Example 3 - Using Pod Definition YAML 
-[03-example-pods-with-yaml](03-example-pods-with-yaml/) shows how to write a pod definition file in YAML
+### Example 3 - Replication Controllers
+[03-example-replication-controllers](03-example-replication-controllers/) shows how to configure Replication Controllers
 
-### Example 4 - Using the Dry Run Command
-[04-example-using-dry-run](04-example-using-dry-run/) shows how we can use `--dry-run` to test commands and generate YAML definitions
+### Example 4 - Replica Sets
+[04-example-replica-sets](04-example-replica-sets/) shows how to use Replica Sets which are intended to superseed Replication Controllers
 
-### Example 5 - Editing a Pod
-[05-example-edit-pod](05-example-edit-pod/) shows how we can edit pods in a number of different ways
+### Example 5 - Basic Deployments
+[05-example-basic-deployments](05-example-basic-deployments/) demonstrates deployments and how to configure them
 
-### Example 6 - Replication Controllers
-[06-example-replication-controllers](06-example-replication-controllers/) shows how to configure Replication Controllers
+### Example 6 - Namespaces
+[6-example-namespaces](6-example-namespaces/) shows how to create and use Namespaces
 
-### Example 7 - Replica Sets
-[07-example-replica-sets](07-example-replica-sets/) shows how to use Replica Sets which are intended to superseed Replication Controllers
+### Example 7 - Quotas
+[7-example-namespace-quotas](7-example-namespace-quotas/) shows how we can use Resource Quotas in namespaces and how they work
 
-### Example 8 - Scaling Replica Sets
-[08-example-scaling-replica-sets](08-example-scaling-replica-sets/) shows how we can scale Replica Sets using the `kubectl scale` command
+### Example 8 - Environment Variables
+[8-example-using-environment-variables](8-example-using-environment-variables/) shows how we can use Environment Variabes in our deployments
 
-### Example 9 - Basic Deployments
-[09-example-basic-deployments](09-example-basic-deployments/) demonstrates deployments and how to configure them
+### Example 9 - Creating Config Maps
+[9-example-creating-config-maps](9-example-creating-config-maps/) shows how to create Config Maps in a couple of different ways
 
-### Example 10 - Namespaces
-[10-example-namespaces](10-example-namespaces/) shows how to create and use Namespaces
+### Example 10 - Using Config Maps
+[10-example-using-config-maps](10-example-using-config-maps/) shows how to create Config Maps in a couple of different ways
 
-### Example 11 - Quotas
-[11-example-namespace-quotas](11-example-namespace-quotas/) shows how we can use Resource Quotas in namespaces and how they work
+### Example 11 - Creating Secrets
+[11-creating-secrets](15-creating-secrets/) shows how to use secrets
 
-### Example 12 - Environment Variables
-[12-example-using-environment-variables](12-example-using-environment-variables/) shows how we can use Environment Variabes in our deployments
-
-### Example 13 - Creating Config Maps
-[13-example-config-maps](13-example-config-maps/) shows how to create Config Maps in a couple of different ways
-
-### Example 14 - Using Config Maps
-[14-example-using-config-maps](14-example-using-config-maps/) shows how to create Config Maps in a couple of different ways
-
-### Example 15 - Secrets
-[15-secrets](15-secrets/) shows how to use secrets
+### Example 12 - Using Secrets
+[12-creating-secrets](12-creating-secrets/) shows how to use secrets
 
 ### Some Commands
 kubectl describe pods  

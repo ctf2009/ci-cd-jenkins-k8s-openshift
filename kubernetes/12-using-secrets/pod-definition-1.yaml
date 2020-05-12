@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-app-pod-1
+  labels:
+    app: sample-app
+spec:
+  containers:
+    - name: sample-app
+      image: ctf/sample-app:latest
+      env:
+        - name: GREETING
+          valueFrom:
+            secretKeyRef:
+              name: sample-app-secret-1
+              key: GREETING
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 9000

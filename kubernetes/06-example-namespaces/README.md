@@ -1,15 +1,15 @@
-## Example 10 - Namespaces
+## Example 6 - Namespaces
 
 Namespaces allow you to divide up cluster resources between multiple users or concerns. Up till now we have been using the default namespace. This example shows you how you can create your own.
 
 You can create namespaces in a couple of different ways
 
-- Use a definition file. e.g `kubectl create -f example-10/namespace-definition.yaml`
+- Use a definition file. e.g `kubectl create -f namespace-definition.yaml`
 - Run the command `kubectl create namespace my-namespace`
 
 To view the namespaces, run `kubectl get namespaces`
 
-You can test the use of namespaces by running `kubectl create -f example-10/namespace-deployment-config.yaml`
+You can test the use of namespaces by running `kubectl create -f namespace-deployment-config.yaml`
 
 **Note:** The above command assumes you have created the namespace `my-namespace` via one of the two options previously outlined.
 

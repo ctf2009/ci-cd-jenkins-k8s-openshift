@@ -1,4 +1,4 @@
-## Example 15 - Secrets
+## Example 11 - Creating Secrets
 
 Secrets are designed to help manage sensitive information a bit more securely. Storing sensitive data in a secret is much safer than declaring it in a pod. 
 
@@ -50,3 +50,7 @@ kubectl create secret generic sample-secret-3 \
 ```
 
 Each secret is given a key of the filename that was provided. You can override this by using `--from-file=<KEY_NAME>=<FILE_NAME>`
+
+### Tidy up
+
+When finished with the example, remove the secrets by running `kubectl delete secrets sample-secret-1 sample-secret-2 sample-secret-3`

@@ -1,4 +1,4 @@
-## Example 14 - Using Config Maps
+## Example 10 - Using Config Maps
 
 This example shows how you can use config maps with pod definitions.
 

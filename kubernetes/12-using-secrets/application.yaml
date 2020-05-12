@@ -1,0 +1,5 @@
+server:
+  port: 9000
+
+greeting: "Hello from an application.yaml file created as a secret and mounted as a volume"
+additional_greeting: "Additional greeting from the secret"

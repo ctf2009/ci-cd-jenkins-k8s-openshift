@@ -1,10 +1,10 @@
-## Example 6 - Replication Controllers
+## Example 3 - Replication Controllers
 
 A ReplicationController ensures that a specified number of pod replicas are running at any one time. ReplicaSets via Deployments are now the recommended way to set up replication. ReplicationControllers are still used however and this example shows how.
 
-Create the ReplicationController using the file located in `example-6/rc-definition.yaml`
+Create the ReplicationController using the file located in `rc-definition.yaml`
 
-`kubectl create -f example-6/rc-definition.yaml`
+`kubectl create -f rc-definition.yaml`
 
 Once run, you can check the status of the ReplicationController by running `kubectl get rc`
 

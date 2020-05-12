@@ -1,10 +1,10 @@
-## Example 11 - Quotas
+## Example 7 - Quotas
 
 This example shows how we can apply resource quotas to namespaces 
 
 First create a namespace by running the following command `kubectl create namespace my-namespace`
 
-Next, create the Resource Quota by running the following: `kubectl create -f example-11/resource-quota.yaml`
+Next, create the Resource Quota by running the following: `kubectl create -f resource-quota.yaml`
 
 You can view the Quote by running `kubectl describe quota compute-quota -n my-namespace`
 

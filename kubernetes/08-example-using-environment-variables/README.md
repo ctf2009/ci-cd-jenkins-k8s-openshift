@@ -1,4 +1,4 @@
-## Example 12 - Using Environment Variables
+## Example 8 - Using Environment Variables
 
 This example shows how we can provide Environment Variables to our application with a pod definition file.
 

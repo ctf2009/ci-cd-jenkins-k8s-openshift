@@ -1,10 +1,10 @@
-## Example 9 - Basic Deployments
+## Example 5 - Basic Deployments
 
 Deployments take things a step further. They provide additional features such as the ability to perform rolling updates and rollbacks. Deployments use Replica Sets in order to manage rolling updates and can scale old pods down as new pods scale up.
 
-Create the ReplicaSet using the file located in `example-9/deployment-config.yaml`
+Create the ReplicaSet using the file located in `deployment-config.yaml`
 
-`kubectl create -f example-9/deployment-config.yaml`
+`kubectl create -f deployment-config.yaml`
 
 Once deployed, you can run `kubectl get all -l app=sample-app` to view everything the Deployment created.
 
