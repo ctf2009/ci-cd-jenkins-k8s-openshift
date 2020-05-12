@@ -1,8 +1,12 @@
 # Kubernetes
 
-The purpose of this Readme is to document the process of running the sample application in Kubernetes
+The aim of this project is to show how to use Kubernetes through a series of examples which use a sample application to demonstrate behaviour
 
-I am using a simple Kubernetes cluster that can be enabled via Docker Desktop. This provides a single node Kubernetes cluster that can be used to run the examples.
+The examples should work on any Kubernetes cluster. There are many ways to get a simple cluster up and running including:
+
+- Docker for Desktop included a single node Kubernetes cluster that can be enables
+- Minikube
+- K3s
 
 ## Kubernetes Dashboard
 
@@ -27,13 +31,13 @@ Then run the following to obtain a token
 
 # Examples
 
-A number of examples are shown below, starting from the most basic and building up to demonstrate more complex concepts
+An overview of the examples is shown below. Each example folder has its own README.md file with instructions to follow. The examples start off with the basics and build up to more complex concepts. 
 
-A Kubernetes cheatsheet is available at [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+A Kubernetes cheatsheet is available at [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) which provides common commands and an explanation of what they do.
 
-Before continuing, please ensure you have built the sample applicaton and that there is a local image available to use. Please refer to the README in the `sample-project` folder for building instructions. 
+Before continuing, please ensure you have built the sample applicaton which is available in the `sample-project` folder at the root of the entire repository. There is a README.md file in the sample app folder with instructions on how to build an image using the gradle Jib plugin.
 
-Once build, if you locally run `docker image ls` then there should be an image named `ctf/sample-app` listed with a tag of `latest`
+You must have a locally built image named `ctf/sample-app` listed with a tag of `latest` before continuing with the examples
 
 ```
 docker image ls
