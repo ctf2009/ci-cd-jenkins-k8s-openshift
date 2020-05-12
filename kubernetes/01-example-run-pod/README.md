@@ -18,7 +18,11 @@ Open a new terminal window and type `curl localhost:9000/greeting` and you shoul
 
 ```
 curl localhost:9000/greeting
-Hello World
+{
+  "hostname": "sample-app-pod",
+  "greeting": "Hello World",
+  "comment": "This is the default profile comment"
+}
 ```
 
 When finished with the example, remove the pod by running the following: `kubectl delete pod sample-app-pod`
