@@ -15,9 +15,7 @@ This section shows how to build the Sample Project into an executable Jar
 
 ### Build
 
-From the root of this project you can simply run  `../gradlew -p ../ :sample:clean :sample:build`
-
-From the root of the entire repository you can run `./gradlew :sample:clean :sample:build`
+From the root of this project you can simply run  `gradlew clean build`
 
 **Note:** Gradle needs "just enough" characters to uniquely identify the sub project 
 
@@ -53,7 +51,7 @@ Please see the Repo's main README for more information about requirements
 Before proceeding, please ensure that Docker is running in your environment.
 Run the following from the Sample App root to create a new image:
 
-`../gradlew -p ../ :sample:jibDockerBuild`
+`gradlew jibDockerBuild`
 
 ### Output
 
